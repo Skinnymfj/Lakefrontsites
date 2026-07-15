@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lakefront Sites | Web Design in Kelowna, BC</title>
+  <meta name="description" content="Lakefront Sites builds custom websites for local businesses in the Okanagan region.">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;1,300;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; padding: 0 40px; background: #fdfcfa; }
+  </style>
+</head>
+<body>
+
+<!-- ================= HERO ================= -->
+<style>
+  .ls-hero-simple {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 -40px;
+    position: relative;
+  }
+  .ls-hero-simple-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 40px;
+  }
+  .ls-hero-eyebrow {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: white;
+    margin-bottom: 20px;
+    display: block;
+    text-shadow:
+      0 1px 4px rgba(0,0,0,0.9),
+      0 2px 16px rgba(0,0,0,0.7);
+  }
+  .ls-hero-simple h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    font-weight: 300;
+    font-style: italic;
+    color: white;
+    line-height: 1.05;
+    margin: 0 0 10px;
+    letter-spacing: -0.01em;
+    text-shadow:
+      0 2px 8px rgba(0,0,0,0.8),
+      0 4px 32px rgba(0,0,0,0.5);
+  }
+  .ls-hero-simple h1 em {
+    font-style: italic;
+    color: white;
+  }
+  .ls-hero-divider {
+    width: 48px;
+    height: 1px;
+    background: rgba(255,255,255,0.7);
+    margin: 24px auto;
+  }
+  .ls-hero-simple-sub {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
+    color: white;
+    margin: 0 0 36px;
+    letter-spacing: 0.04em;
+    text-shadow:
+      0 1px 4px rgba(0,0,0,0.9),
+      0 2px 16px rgba(0,0,0,0.6);
+  }
+  .ls-hero-simple-btn {
+    display: inline-block;
+    padding: 14px 36px;
+    background: white;
+    color: #1a2b1e;
+    border-radius: 100px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s;
+    margin: 0 6px;
+  }
+  .ls-hero-simple-btn:hover { background: #f0ebe0; }
+  .ls-hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    margin-top: 56px;
+    border-top: 1px solid rgba(255,255,255,0.4);
+    padding-top: 32px;
+  }
+  .ls-hero-stat {
+    padding: 0 36px;
+    border-right: 1px solid rgba(255,255,255,0.3);
+  }
+  .ls-hero-stat:last-child { border-right: none; }
+  .ls-hero-stat-val {
+    font-family: 'Fraunces', serif;
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: white;
+    display: block;
+    line-height: 1;
+    margin-bottom: 5px;
+    text-shadow:
+      0 1px 4px rgba(0,0,0,0.8),
+      0 2px 16px rgba(0,0,0,0.5);
+  }
+  .ls-hero-stat-lbl {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.85);
+    text-shadow: 0 1px 6px rgba(0,0,0,0.8);
+  }
+  @media (max-width: 768px) {
+    .ls-hero-simple { margin: 0 -20px; }
+    .ls-hero-stats { flex-direction: column; align-items: center; gap: 20px; }
+    .ls-hero-stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.25); padding: 0 0 20px; }
+    .ls-hero-stat:last-child { border-bottom: none; }
+  }
+</style>
+<div class="ls-hero-simple">
+  <div class="ls-hero-simple-content">
+    <span class="ls-hero-eyebrow">Kelowna, BC &nbsp;·&nbsp; Serving Canada & Beyond</span>
+    <h1>Lakefront<br><em>Sites</em></h1>
+    <div class="ls-hero-divider"></div>
+    <p class="ls-hero-simple-sub">Built Local. Designed to Grow.</p>
+    <div>
+      <a href="/contact.html" class="ls-hero-simple-btn">Get your website</a>
+    </div>
+    <div class="ls-hero-stats">
+      <div class="ls-hero-stat">
+        <span class="ls-hero-stat-val">5 ★</span>
+        <span class="ls-hero-stat-lbl">Average rating</span>
+      </div>
+      <div class="ls-hero-stat">
+        <span class="ls-hero-stat-val">2–4 wks</span>
+        <span class="ls-hero-stat-lbl">Turnaround</span>
+      </div>
+      <div class="ls-hero-stat">
+        <span class="ls-hero-stat-val">$599+</span>
+        <span class="ls-hero-stat-lbl">Starting price</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= PACKAGES HEADER ================= -->
+<style>
+  .ls-pkg-header {
+    font-family: 'Outfit', sans-serif;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 0 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  .ls-pkg-header-left .ls-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #2f7048;
+    font-weight: 500;
+    margin-bottom: 14px;
+    display: block;
+  }
+  .ls-pkg-header-left h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2.6rem, 5vw, 4rem);
+    font-weight: 300;
+    color: #1a2b1e;
+    line-height: 1.1;
+    margin: 0;
+  }
+  .ls-pkg-header-left h2 em {
+    font-style: italic;
+    color: #2f7048;
+  }
+  .ls-pkg-header-right {
+    max-width: 300px;
+  }
+  .ls-pkg-header-right p {
+    font-size: 0.95rem;
+    color: #7a8c7e;
+    line-height: 1.7;
+    margin: 0 0 20px;
+  }
+  .ls-pkg-header-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #d6e8d9;
+    border-radius: 100px;
+    padding: 8px 16px;
+    font-size: 0.8rem;
+    color: #2f7048;
+    font-weight: 500;
+  }
+  .ls-pkg-header-tag span {
+    width: 7px; height: 7px;
+    background: #2f7048;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  @media (max-width: 768px) {
+    .ls-pkg-header { flex-direction: column; align-items: flex-start; }
+    .ls-pkg-header-right { max-width: 100%; }
+  }
+</style>
+<div class="ls-pkg-header">
+  <div class="ls-pkg-header-left">
+    <span class="ls-eyebrow">Packages</span>
+    <h2>Simple,<br><em>honest</em> pricing</h2>
+  </div>
+  <div class="ls-pkg-header-right">
+    <p>No hidden fees. Every website is built custom to your business — not from a cookie-cutter template.</p>
+    <div class="ls-pkg-header-tag">
+      <span></span> All quotes are free
+    </div>
+  </div>
+</div>
+
+<!-- ================= PACKAGES GRID ================= -->
+<style>
+  .ls-pkg-wrap {
+    font-family: 'Outfit', sans-serif;
+    padding: 0 0 20px;
+    margin: 0;
+  }
+  .ls-pkg-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .ls-card {
+    background: #faf7f2;
+    border: 1px solid #ddd5c5;
+    border-radius: 20px;
+    padding: 40px 32px;
+    position: relative;
+  }
+  .ls-card.featured {
+    background: #1c3d28;
+    border-color: #1c3d28;
+    color: white;
+    margin-top: -16px;
+    margin-bottom: -16px;
+  }
+  .ls-popular {
+    position: absolute;
+    top: -14px; left: 50%;
+    transform: translateX(-50%);
+    background: #2f7048;
+    color: white;
+    font-size: 0.72rem;
+    font-weight: 500;
+    padding: 5px 18px;
+    border-radius: 100px;
+    white-space: nowrap;
+  }
+  .ls-name {
+    font-family: 'Fraunces', serif;
+    font-size: 1.7rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+    color: #1a2b1e;
+  }
+  .ls-card.featured .ls-name { color: white; }
+  .ls-desc {
+    font-size: 0.87rem;
+    color: #7a8c7e;
+    line-height: 1.6;
+    margin-bottom: 28px;
+  }
+  .ls-card.featured .ls-desc { color: rgba(255,255,255,0.6); }
+  .ls-price {
+    font-family: 'Fraunces', serif;
+    font-size: 3.2rem;
+    font-weight: 300;
+    color: #1a2b1e;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .ls-card.featured .ls-price { color: white; }
+  .ls-price-note {
+    font-size: 0.76rem;
+    color: #7a8c7e;
+    margin-bottom: 24px;
+    display: block;
+  }
+  .ls-card.featured .ls-price-note { color: rgba(255,255,255,0.45); }
+  .ls-divider {
+    border: none;
+    border-top: 1px solid #ddd5c5;
+    margin: 20px 0;
+  }
+  .ls-card.featured .ls-divider { border-color: rgba(255,255,255,0.12); }
+  .ls-features {
+    list-style: none;
+    padding: 0; margin: 0 0 32px;
+  }
+  .ls-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.88rem;
+    color: #4a5e50;
+    padding: 7px 0;
+  }
+  .ls-card.featured .ls-features li { color: rgba(255,255,255,0.85); }
+  .ls-check {
+    width: 18px; height: 18px;
+    background: #d6e8d9;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: #2f7048;
+    font-size: 0.65rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .ls-card.featured .ls-check {
+    background: rgba(255,255,255,0.15);
+    color: white;
+  }
+  .ls-btn {
+    display: block;
+    text-align: center;
+    padding: 14px;
+    border-radius: 100px;
+    font-size: 0.88rem;
+    text-decoration: none;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  .ls-btn-outline {
+    border: 1.5px solid #ddd5c5;
+    color: #1a2b1e;
+    background: transparent;
+  }
+  .ls-btn-outline:hover { border-color: #2f7048; color: #2f7048; }
+  .ls-btn-fill {
+    background: white;
+    color: #1c3d28;
+    font-weight: 500;
+    border: none;
+  }
+  .ls-btn-fill:hover { background: #f0ebe0; }
+  .ls-footnote {
+    text-align: center;
+    font-size: 0.78rem;
+    color: #7a8c7e;
+    margin-top: 32px;
+  }
+  @media (max-width: 768px) {
+    .ls-pkg-grid { grid-template-columns: 1fr; }
+    .ls-card.featured { margin: 0; }
+  }
+</style>
+<div class="ls-pkg-wrap">
+  <div class="ls-pkg-grid">
+    <div class="ls-card">
+      <div class="ls-name">Starter</div>
+      <p class="ls-desc">Perfect for small businesses that need a clean, professional online presence fast.</p>
+      <div class="ls-price">$599</div>
+      <span class="ls-price-note">starting at · final price based on scope</span>
+      <hr class="ls-divider">
+      <ul class="ls-features">
+        <li><span class="ls-check">✓</span> 1–3 pages</li>
+        <li><span class="ls-check">✓</span> Clean, modern design</li>
+        <li><span class="ls-check">✓</span> Mobile-friendly layout</li>
+        <li><span class="ls-check">✓</span> Contact form</li>
+        <li><span class="ls-check">✓</span> 14 days post-launch support</li>
+      </ul>
+      <a href="/contact.html" class="ls-btn ls-btn-outline">Get started</a>
+    </div>
+
+    <div class="ls-card featured">
+      <span class="ls-popular">Most popular</span>
+      <div class="ls-name">Business</div>
+      <p class="ls-desc">For growing businesses ready to stand out online and attract more local customers.</p>
+      <div class="ls-price">$899</div>
+      <span class="ls-price-note">starting at · final price based on scope</span>
+      <hr class="ls-divider">
+      <ul class="ls-features">
+        <li><span class="ls-check">✓</span> Multiple pages</li>
+        <li><span class="ls-check">✓</span> Custom design</li>
+        <li><span class="ls-check">✓</span> Service &amp; contact sections</li>
+        <li><span class="ls-check">✓</span> SEO basics included</li>
+        <li><span class="ls-check">✓</span> Google Maps integration</li>
+        <li><span class="ls-check">✓</span> 14 days post-launch support</li>
+      </ul>
+      <a href="/contact.html" class="ls-btn ls-btn-fill">Get started</a>
+    </div>
+
+    <div class="ls-card">
+      <div class="ls-name">Custom</div>
+      <p class="ls-desc">Need something more advanced? Fully custom websites built around your specific goals.</p>
+      <div class="ls-price" style="font-size:2.6rem;">Custom</div>
+      <span class="ls-price-note">contact for a tailored quote</span>
+      <hr class="ls-divider">
+      <ul class="ls-features">
+        <li><span class="ls-check">✓</span> Advanced features</li>
+        <li><span class="ls-check">✓</span> Unique layouts</li>
+        <li><span class="ls-check">✓</span> Scalable design</li>
+        <li><span class="ls-check">✓</span> E-commerce options</li>
+        <li><span class="ls-check">✓</span> Ongoing maintenance available</li>
+      </ul>
+      <a href="/contact.html" class="ls-btn ls-btn-outline">Request quote</a>
+    </div>
+  </div>
+  <p class="ls-footnote">Final pricing depends on your project. All quotes are free and obligation-free.</p>
+</div>
+
+<!-- ================= REVIEWS HEADER ================= -->
+<style>
+  .ls-reviews-header {
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 0 40px;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .ls-reviews-left .ls-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #2f7048;
+    font-weight: 500;
+    margin-bottom: 10px;
+    display: block;
+  }
+  .ls-reviews-left h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 300;
+    color: #1a2b1e;
+    margin: 0;
+  }
+  .ls-reviews-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border: 1px solid #ddd5c5;
+    border-radius: 100px;
+    font-size: 0.82rem;
+    color: #4a5e50;
+    background: #faf7f2;
+    white-space: nowrap;
+  }
+  .ls-reviews-badge .ls-stars { color: #c9943c; letter-spacing: 1px; }
+</style>
+<div class="ls-reviews-header">
+  <div class="ls-reviews-left">
+    <span class="ls-eyebrow">Reviews</span>
+    <h2>What our clients say</h2>
+  </div>
+  <div class="ls-reviews-badge">
+    <span class="ls-stars">★★★★★</span>
+    5  · 30+ reviews
+  </div>
+</div>
+
+<!-- ================= REVIEWS GRID ================= -->
+<style>
+  .ls-reviews {
+    font-family: 'Outfit', sans-serif;
+    padding: 0 0 20px;
+  }
+  .ls-reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .ls-review-card {
+    background: #faf7f2;
+    border: 1px solid #ddd5c5;
+    border-radius: 20px;
+    padding: 32px;
+  }
+  .ls-review-stars {
+    color: #c9943c;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+  .ls-review-text {
+    font-size: 0.9rem;
+    color: #4a5e50;
+    line-height: 1.72;
+    font-style: italic;
+    margin-bottom: 20px;
+  }
+  .ls-review-from {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #1a2b1e;
+    margin-bottom: 4px;
+  }
+  .ls-review-url {
+    font-size: 0.78rem;
+    color: #2f7048;
+    text-decoration: none;
+  }
+  .ls-review-url:hover { text-decoration: underline; }
+  @media (max-width: 768px) {
+    .ls-reviews-grid { grid-template-columns: 1fr; }
+  }
+</style>
+<div class="ls-reviews">
+  <div class="ls-reviews-grid">
+    <div class="ls-review-card">
+      <div class="ls-review-stars">★★★★★</div>
+      <p class="ls-review-text">"We just needed something simple that looked good and actually showed who we are as a band. He nailed it. Super easy to work with and everything turned out exactly how we wanted."</p>
+      <div class="ls-review-from">Postill Station</div>
+      <a href="https://postillstation.ca" class="ls-review-url">postillstation.ca</a>
+    </div>
+    <div class="ls-review-card">
+      <div class="ls-review-stars">★★★★★</div>
+      <p class="ls-review-text">"We wanted a clean site that worked well on phones and showed off our parts properly. The whole process was straightforward and we're really happy with how it turned out."</p>
+      <div class="ls-review-from">RLW Offroad</div>
+      <a href="https://rlwoffroad.com" class="ls-review-url">rlwoffroad.com</a>
+    </div>
+    <div class="ls-review-card">
+      <div class="ls-review-stars">★★★★★</div>
+      <p class="ls-review-text">"We needed a website where people could quickly check our menu and info without any hassle. It looks great and does exactly what we needed. Really easy to work with too."</p>
+      <div class="ls-review-from">Okanagan Brew</div>
+      <a href="https://okanaganbrew.com" class="ls-review-url">okanaganbrew.com</a>
+    </div>
+  </div>
+</div>
+
+<!-- ================= FAQ ================= -->
+<style>
+  .ls-faq-wrap {
+    font-family: 'Outfit', sans-serif;
+    background: transparent;
+    padding: 80px 0 60px;
+    margin: 0;
+  }
+  .ls-faq-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .ls-faq-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #2f7048;
+    font-weight: 500;
+    margin-bottom: 10px;
+    display: block;
+  }
+  .ls-faq-title {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 300;
+    color: #1a2b1e;
+    margin: 0 0 10px;
+  }
+  .ls-faq-sub {
+    font-size: 0.95rem;
+    color: #4a5e50;
+    margin: 0 0 40px;
+  }
+  .ls-faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .ls-faq-item {
+    background: #faf7f2;
+    border: 1px solid #c8ddc9;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .ls-faq-item:has(input:checked) {
+    border-color: #2f7048;
+  }
+  .ls-faq-item input[type="checkbox"] {
+    display: none;
+  }
+  .ls-faq-q {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 22px 24px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.92rem;
+    font-weight: 400;
+    color: #1a2b1e;
+    cursor: pointer;
+    user-select: none;
+  }
+  .ls-faq-icon {
+    width: 26px; height: 26px;
+    flex-shrink: 0;
+    background: #d6e8d9;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2f7048;
+    font-size: 1rem;
+    font-weight: 300;
+    transition: transform 0.25s, background 0.2s;
+  }
+  .ls-faq-item:has(input:checked) .ls-faq-icon {
+    transform: rotate(45deg);
+    background: #2f7048;
+    color: white;
+  }
+  .ls-faq-a {
+    font-size: 0.87rem;
+    color: #7a8c7e;
+    line-height: 1.72;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.25s;
+    padding: 0 24px;
+  }
+  .ls-faq-item:has(input:checked) .ls-faq-a {
+    max-height: 200px;
+    padding: 0 24px 22px;
+  }
+  @media (max-width: 768px) {
+    .ls-faq-grid { grid-template-columns: 1fr; }
+    .ls-faq-wrap { padding: 48px 20px; margin: 0 -20px; }
+  }
+</style>
+<div class="ls-faq-wrap">
+  <div class="ls-faq-inner">
+    <span class="ls-faq-eyebrow">FAQ</span>
+    <h2 class="ls-faq-title">Common questions</h2>
+    <p class="ls-faq-sub">Everything you need to know before getting started.</p>
+
+    <div class="ls-faq-grid">
+      <div class="ls-faq-item">
+        <input type="checkbox" id="faq1">
+        <label class="ls-faq-q" for="faq1">
+          What services do you offer?
+          <span class="ls-faq-icon">+</span>
+        </label>
+        <div class="ls-faq-a">I design and build custom websites for small businesses, restaurants, and local services. Each website is tailored to your business and built to look professional and attract customers.</div>
+      </div>
+
+      <div class="ls-faq-item">
+        <input type="checkbox" id="faq2">
+        <label class="ls-faq-q" for="faq2">
+          How long does it take to build a website?
+          <span class="ls-faq-icon">+</span>
+        </label>
+        <div class="ls-faq-a">Most websites are completed within 2–4 weeks depending on the size and complexity of the project.</div>
+      </div>
+
+      <div class="ls-faq-item">
+        <input type="checkbox" id="faq3">
+        <label class="ls-faq-q" for="faq3">
+          How do I get started?
+          <span class="ls-faq-icon">+</span>
+        </label>
+        <div class="ls-faq-a">Simply fill out the contact form and tell me a bit about your business. I'll reach out to discuss your needs and provide a custom quote.</div>
+      </div>
+
+      <div class="ls-faq-item">
+        <input type="checkbox" id="faq4">
+        <label class="ls-faq-q" for="faq4">
+          What's your pricing model?
+          <span class="ls-faq-icon">+</span>
+        </label>
+        <div class="ls-faq-a">Pricing depends on the size and features of your website. I offer starting prices for each package, and final pricing is based on your specific needs.</div>
+      </div>
+
+      <div class="ls-faq-item">
+        <input type="checkbox" id="faq5">
+        <label class="ls-faq-q" for="faq5">
+          What makes you different?
+          <span class="ls-faq-icon">+</span>
+        </label>
+        <div class="ls-faq-a">I focus on simple, clean designs that actually help your business grow. I work directly with you, keep the process easy, and make sure your website fits your goals.</div>
+      </div>
+
+      <div class="ls-faq-item">
+        <input type="checkbox" id="faq6">
+        <label class="ls-faq-q" for="faq6">
+          Do you provide ongoing maintenance?
+          <span class="ls-faq-icon">+</span>
+        </label>
+        <div class="ls-faq-a">I include 14 days of support after your website goes live. After that, additional updates or changes can be requested separately.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio · Lakefront Sites</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --cream: #f5f0e8;
+      --cream-dark: #ede7d9;
+      --green: #2d4a3e;
+      --green-mid: #3d6355;
+      --green-light: #5a8a74;
+      --green-pale: #e8efe9;
+      --text: #1e2e28;
+      --text-muted: #6b7c74;
+      --white: #fdfcfa;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    .pf-wrap {
+      background: var(--cream);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* HERO */
+    .pf-header { padding: 60px 5% 70px; text-align: center; background: var(--cream); }
+    .pf-eyebrow {
+      display: inline-block; font-size: .72rem; font-weight: 500;
+      letter-spacing: .14em; text-transform: uppercase;
+      color: var(--green-light); border: 1px solid var(--green-light);
+      border-radius: 20px; padding: .3rem .9rem; margin-bottom: 1.5rem;
+    }
+    .pf-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 5vw, 3.8rem); font-weight: 400;
+      line-height: 1.15; color: var(--green); margin-bottom: 1rem;
+    }
+    .pf-header h1 em { font-style: italic; color: var(--green-light); }
+    .pf-divider { width: 48px; height: 2px; background: var(--green-light); margin: 1.75rem auto; border-radius: 2px; }
+    .pf-header p { font-size: 1rem; color: var(--text-muted); max-width: 500px; margin: 0 auto; line-height: 1.75; }
+
+    /* GRID */
+    .pf-grid { max-width: 1100px; margin: 0 auto; padding: 0 5% 90px; display: grid; gap: 52px; }
+
+    /* CARD */
+    .pf-card {
+      background: var(--white); border-radius: 16px; overflow: hidden;
+      box-shadow: 0 2px 16px rgba(45,74,62,.07), 0 1px 3px rgba(45,74,62,.05);
+      display: grid; grid-template-columns: 1fr 1fr;
+      transition: transform .3s ease, box-shadow .3s ease;
+      animation: pfFadeUp .6s ease both;
+    }
+    .pf-card:nth-child(1) { animation-delay: .1s; }
+    .pf-card:nth-child(2) { animation-delay: .25s; }
+    .pf-card:nth-child(3) { animation-delay: .4s; }
+    .pf-card:hover { transform: translateY(-4px); box-shadow: 0 14px 44px rgba(45,74,62,.12); }
+    .pf-card:nth-child(even) { direction: rtl; }
+    .pf-card:nth-child(even) > * { direction: ltr; }
+
+    .pf-card-image {
+      position: relative; min-height: 360px;
+      overflow: hidden; background: var(--green-pale);
+    }
+    .pf-browser-bar {
+      position: absolute; top: 0; left: 0; right: 0; height: 34px;
+      background: rgba(255,255,255,.92); display: flex; align-items: center;
+      padding: 0 12px; gap: 6px; border-bottom: 1px solid rgba(0,0,0,.07); z-index: 2;
+    }
+    .pf-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .pf-dot-r { background: #ff5f57; }
+    .pf-dot-y { background: #febc2e; }
+    .pf-dot-g { background: #28c840; }
+    .pf-url-bar {
+      margin-left: 8px; flex: 1; height: 20px; background: rgba(45,74,62,.07);
+      border-radius: 4px; display: flex; align-items: center; padding: 0 8px;
+    }
+    .pf-url-bar span { font-size: .68rem; color: var(--text-muted); }
+
+    .pf-card-image img {
+      position: absolute; top: 34px; left: 0;
+      width: 100%; height: calc(100% - 34px);
+      object-fit: cover; object-position: top;
+      transition: transform .5s ease;
+    }
+    .pf-card:hover .pf-card-image img { transform: scale(1.03); }
+
+    .pf-card-image.full-view {
+      display: flex; flex-direction: column;
+    }
+    .pf-card-image.full-view img {
+      position: static;
+      width: 100%; height: auto;
+      object-fit: unset;
+      flex: 1;
+    }
+
+    .pf-card-content { padding: 48px 44px; display: flex; flex-direction: column; justify-content: center; }
+    .pf-card-number { font-family: 'Playfair Display', serif; font-size: 3.8rem; font-weight: 400; color: var(--green-pale); line-height: 1; margin-bottom: .1rem; user-select: none; }
+    .pf-card-tag { font-size: .68rem; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--green-light); margin-bottom: .7rem; }
+    .pf-card-title { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 600; color: var(--green); line-height: 1.2; margin-bottom: .9rem; }
+    .pf-card-title em { font-style: italic; font-weight: 400; }
+    .pf-card-desc { font-size: .92rem; color: var(--text-muted); line-height: 1.75; margin-bottom: 1.4rem; }
+    .pf-features { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: 1.8rem; }
+    .pf-feature { background: var(--green-pale); color: var(--green-mid); font-size: .7rem; font-weight: 500; padding: .25rem .75rem; border-radius: 20px; }
+    .pf-card-link {
+      display: inline-flex; align-items: center; gap: .5rem;
+      text-decoration: none; font-size: .85rem; font-weight: 500;
+      color: var(--green); border: 1.5px solid var(--green);
+      border-radius: 8px; padding: .5rem 1.1rem; width: fit-content;
+      transition: background .2s, color .2s;
+    }
+    .pf-card-link:hover { background: var(--green); color: var(--cream); }
+    .pf-card-link svg { transition: transform .2s; }
+    .pf-card-link:hover svg { transform: translateX(3px); }
+
+    /* CTA */
+    .pf-cta { text-align: center; padding: 76px 5% 84px; background: var(--green); }
+    .pf-cta h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.7rem, 3.5vw, 2.5rem); font-weight: 400; color: var(--cream); margin-bottom: .85rem; }
+    .pf-cta h2 em { font-style: italic; color: #a8c5b5; }
+    .pf-cta p { color: rgba(245,240,232,.6); font-size: 1rem; margin-bottom: 1.8rem; line-height: 1.7; }
+    .pf-cta-btn { display: inline-block; background: var(--cream); color: var(--green); text-decoration: none; font-weight: 500; font-size: .95rem; padding: .8rem 1.9rem; border-radius: 8px; transition: background .2s, transform .2s; }
+    .pf-cta-btn:hover { background: var(--cream-dark); transform: translateY(-2px); }
+
+    /* FOOTER */
+    .pf-footer { background: var(--green); border-top: 1px solid rgba(245,240,232,.1); padding: 1.5rem 5%; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .pf-footer-logo { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--cream); text-decoration: none; }
+    .pf-footer-logo em { font-style: italic; color: #a8c5b5; }
+    .pf-footer small { color: rgba(245,240,232,.4); font-size: .78rem; }
+
+    @keyframes pfFadeUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+
+    @media (max-width: 768px) {
+      .pf-card { grid-template-columns: 1fr; }
+      .pf-card:nth-child(even) { direction: ltr; }
+      .pf-card-image { min-height: 210px; }
+      .pf-card-content { padding: 32px 24px; }
+      .pf-card-number { font-size: 3rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="pf-wrap">
+
+  <div class="pf-header">
+    <span class="pf-eyebrow">Our Work</span>
+    <h1>Real sites.<br><em>Real results.</em></h1>
+    <div class="pf-divider"></div>
+    <p>Every site we build is custom — designed around your business, your customers, and your goals. Here's a look at some of our recent work.</p>
+  </div>
+
+  <section class="pf-grid">
+
+    <article class="pf-card">
+      <div class="pf-card-image">
+        <div class="pf-browser-bar">
+          <span class="pf-dot pf-dot-r"></span><span class="pf-dot pf-dot-y"></span><span class="pf-dot pf-dot-g"></span>
+          <div class="pf-url-bar"><span>postillstation.ca</span></div>
+        </div>
+        <img src="images/postill-station-1.jpg" alt="Postill Station website" />
+      </div>
+      <div class="pf-card-content">
+        <div class="pf-card-number">01</div>
+        <div class="pf-card-tag">Band · Music</div>
+        <h2 class="pf-card-title">Postill<br><em>Station</em></h2>
+        <p class="pf-card-desc">A clean, personality-driven site that captures the band's vibe and gives fans a place to find shows, music, and contact info — all in one spot.</p>
+        <div class="pf-features">
+          <span class="pf-feature">Custom Design</span>
+          <span class="pf-feature">Mobile-Friendly</span>
+          <span class="pf-feature">Contact Form</span>
+        </div>
+        <a class="pf-card-link" href="https://postillstation.ca" target="_blank" rel="noopener">
+          Visit Site <svg width="14" height="14" fill="none" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </article>
+
+    <article class="pf-card">
+      <div class="pf-card-image">
+        <div class="pf-browser-bar">
+          <span class="pf-dot pf-dot-r"></span><span class="pf-dot pf-dot-y"></span><span class="pf-dot pf-dot-g"></span>
+          <div class="pf-url-bar"><span>rlwoffroad.com</span></div>
+        </div>
+        <img src="images/rlw-offroad-1.jpg" alt="RLW Offroad website" />
+      </div>
+      <div class="pf-card-content">
+        <div class="pf-card-number">02</div>
+        <div class="pf-card-tag">Automotive · Parts</div>
+        <h2 class="pf-card-title">RLW<br><em>Offroad</em></h2>
+        <p class="pf-card-desc">A rugged yet polished site built to showcase their offroad parts inventory — mobile-optimised so customers can browse easily from anywhere.</p>
+        <div class="pf-features">
+          <span class="pf-feature">Product Showcase</span>
+          <span class="pf-feature">Mobile-First</span>
+          <span class="pf-feature">SEO Basics</span>
+        </div>
+        <a class="pf-card-link" href="https://rlwoffroad.com" target="_blank" rel="noopener">
+          Visit Site <svg width="14" height="14" fill="none" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </article>
+
+    <article class="pf-card">
+      <div class="pf-card-image full-view">
+        <div class="pf-browser-bar">
+          <span class="pf-dot pf-dot-r"></span><span class="pf-dot pf-dot-y"></span><span class="pf-dot pf-dot-g"></span>
+          <div class="pf-url-bar"><span>okanaganbrew.com</span></div>
+        </div>
+        <img src="images/okanagan-brew-1.jpg" alt="Okanagan Brew website" />
+      </div>
+      <div class="pf-card-content">
+        <div class="pf-card-number">03</div>
+        <div class="pf-card-tag">Hospitality · Food & Drink</div>
+        <h2 class="pf-card-title">Okanagan<br><em>Brew</em></h2>
+        <p class="pf-card-desc">A clean, no-fuss site where customers can check the menu and hours at a glance — exactly what a local brew pub needs to turn searches into foot traffic.</p>
+        <div class="pf-features">
+          <span class="pf-feature">Menu Display</span>
+          <span class="pf-feature">Google Maps</span>
+          <span class="pf-feature">Fast & Clean</span>
+        </div>
+        <a class="pf-card-link" href="https://okanaganbrew.com" target="_blank" rel="noopener">
+          Visit Site <svg width="14" height="14" fill="none" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </article>
+
+  </section>
+
+  <section class="pf-cta">
+    <h2>Ready for a site that<br><em>actually works?</em></h2>
+    <p>All quotes are free and obligation-free. Let's talk about your business.</p>
+    <a class="pf-cta-btn" href="/contact.html">Get a Free Quote</a>
+  </section>
+
+  <footer class="pf-footer">
+    <a class="pf-footer-logo" href="/index.html">Lakefront <em>Sites</em></a>
+    <small>© 2026 LakeFront Sites · Kelowna, BC</small>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get a Quote | Lakefront Sites</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body style="margin:0; background:#fdfcfa;">
+
+<style>
+  .ls-quote-wrap {
+    font-family: 'Outfit', sans-serif;
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 60px 24px 80px;
+  }
+  .ls-quote-header {
+    text-align: center;
+    margin-bottom: 44px;
+  }
+  .ls-quote-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #2f7048;
+    font-weight: 500;
+    margin-bottom: 14px;
+    display: block;
+  }
+  .ls-quote-header h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2rem, 4.5vw, 2.8rem);
+    font-weight: 300;
+    color: #1a2b1e;
+    margin: 0 0 12px;
+  }
+  .ls-quote-header h1 em { font-style: italic; color: #2f7048; }
+  .ls-quote-header p {
+    font-size: 0.95rem;
+    color: #7a8c7e;
+    line-height: 1.7;
+    margin: 0;
+  }
+  .ls-quote-form {
+    background: #faf7f2;
+    border: 1px solid #ddd5c5;
+    border-radius: 20px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .ls-quote-form label {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: #1a2b1e;
+    margin-bottom: 6px;
+    display: block;
+  }
+  .ls-quote-form input,
+  .ls-quote-form select,
+  .ls-quote-form textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #ddd5c5;
+    border-radius: 10px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9rem;
+    color: #1a2b1e;
+    background: white;
+    box-sizing: border-box;
+  }
+  .ls-quote-form input:focus,
+  .ls-quote-form select:focus,
+  .ls-quote-form textarea:focus {
+    outline: none;
+    border-color: #2f7048;
+  }
+  .ls-quote-form textarea {
+    resize: vertical;
+    min-height: 110px;
+  }
+  .ls-quote-btn {
+    background: #1c3d28;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 100px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .ls-quote-btn:hover { background: #2f7048; }
+</style>
+
+<div class="ls-quote-wrap">
+  <div class="ls-quote-header">
+    <span class="ls-quote-eyebrow">Get Started</span>
+    <h1>Get a free <em>quote</em></h1>
+    <p>Tell me a bit about your business and what you're looking for. I'll get back to you within 24–48 hours with a custom quote.</p>
+  </div>
+
+  <form class="ls-quote-form" action="https://formspree.io/f/mrenekdg" method="POST">
+    <div>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    <div>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div>
+      <label for="business">Business name</label>
+      <input type="text" id="business" name="business">
+    </div>
+    <div>
+      <label for="package">Which package are you interested in?</label>
+      <select id="package" name="package">
+        <option value="Starter">Starter — $599+</option>
+        <option value="Business">Business — $899+</option>
+        <option value="Custom">Custom</option>
+        <option value="Not sure">Not sure yet</option>
+      </select>
+    </div>
+    <div>
+      <label for="message">Tell me about your project</label>
+      <textarea id="message" name="message" required></textarea>
+    </div>
+    <button type="submit" class="ls-quote-btn">Send my quote request</button>
+  </form>
+</div>
+
+</body>
+</html>
